@@ -311,6 +311,8 @@ const communityStories = [
 // Ocean image placeholder. Replace with a real Flenzo ocean photograph later.
 const oceanImage = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=88";
 // const heroImage = "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=88";
+// const oceanImage = "/flenzo/impact/impact-img.jpeg";
+
 
 const WHATSAPP_NUMBER = "254743405833";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -590,28 +592,31 @@ function App() {
             </div>
 
             <div className="culture-cta">
-              <strong>WEAR THE PLACE. LIVE THE CULTURE.</strong>
+              <div>
+                <strong>WEAR THE PLACE. LIVE THE CULTURE.</strong>
 
-              <button
-                className="text-btn"
-                onClick={() => scrollTo("community")}
-              >
+                <p className="culture-support">
+                  Every Flenzo purchase helps support community activities,
+                  creative spaces and coastal initiatives that keep the culture moving.
+                </p>
+              </div>
+
+              <button className="text-btn" onClick={() => scrollTo("community")}>
                 EXPLORE THE COMMUNITY <Icon name="arrow" size={15} />
               </button>
             </div>
-
-          </div>
-          <div className="culture-grid">
-            {cultureStories.map((story, index) => (
-              <article className={`culture-card culture-card-${index + 1}`} key={story.id}>
-                <div className={`culture-image ${story.id}`}><img src={story.image} alt={story.title} /></div>
-                <div className="culture-card-copy">
-                  <p className="eyebrow">{story.label}</p>
-                  <h3>{story.title}</h3>
-                  <p>{story.text}</p>
-                </div>
-              </article>
-            ))}
+            <div className="culture-grid">
+              {cultureStories.map((story, index) => (
+                <article className={`culture-card culture-card-${index + 1}`} key={story.id}>
+                  <div className={`culture-image ${story.id}`}><img src={story.image} alt={story.title} /></div>
+                  <div className="culture-card-copy">
+                    <p className="eyebrow">{story.label}</p>
+                    <h3>{story.title}</h3>
+                    <p>{story.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -647,19 +652,53 @@ function App() {
         <section className="impact-section" id="impact">
           <div className="impact-image" style={{ backgroundImage: `url('${oceanImage}')` }}></div>
           <div className="impact-overlay"></div>
+          ```jsx
           <div className="impact-copy">
-            <p className="eyebrow">FLENZO IMPACT / OCEAN</p>
-            <h2>MOVEMENT<br /><span>→ COMMUNITY</span><br /><span>→ OCEAN</span></h2>
+            <p className="eyebrow">FLENZO IMPACT / SOUTH COAST</p>
+
+            <h2>
+              WEAR SOMETHING<br />
+              <em>THAT MEANS MORE.</em>
+            </h2>
+
             <p>
-              Skate 4 the Ocean. Cup of Altinha. Community beach cleanups.
-              Different ways of moving, playing and showing up, connected by one
-              place: the South Coast.
+              A Flenzo piece is more than something you put on.
+              It carries the energy of the coast, the people around it,
+              and the moments that bring us together.
             </p>
+
+            <p>
+              When you choose Flenzo, you become part of that story.
+              Your support helps us keep creating moments for people to
+              move, play, connect and give back to the places we call home.
+            </p>
+
+            <div className="impact-line">
+              <span>01</span>
+              <strong>MOVE.</strong>
+              <span>Skate. Play. Explore.</span>
+            </div>
+
+            <div className="impact-line">
+              <span>02</span>
+              <strong>CONNECT.</strong>
+              <span>People. Community. Culture.</span>
+            </div>
+
+            <div className="impact-line">
+              <span>03</span>
+              <strong>GIVE BACK.</strong>
+              <span>Our coast. Our home.</span>
+            </div>
+
             <p className="impact-note">
-              The coast is part of our everyday life. So is the responsibility to
-              respect it, protect it and keep the community connected to it.
+              The culture is alive because people show up for it.
+              <br />
+              <strong>Thank you for being part of it.</strong>
             </p>
           </div>
+          ```
+
         </section>
 
         <section className="newsletter">
